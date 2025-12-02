@@ -1,0 +1,8 @@
+Flask
+numpy
+pandas
+torch
+tensorflow
+librosa
+scikit-learn
+joblib

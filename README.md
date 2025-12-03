@@ -23,18 +23,6 @@ By integrating both modalities, the system achieves **98.19% accuracy** and **AU
 
 ---
 
-## 🧬 System Architecture  
-```mermaid
-flowchart TD
-A[Input Data] --> B[Spirometry Data Preprocessing]
-A --> C[Lung Sound Audio Preprocessing]
-B --> D[MLP Model - Stage Prediction]
-C --> E[CNN-LSTM Model - Sound Classification]
-D --> F[Prediction Fusion]
-E --> F
-F --> G[Final COPD Diagnosis & Stage Output]
-
-
 ----
 ## 📂 Dataset Details
 
@@ -130,6 +118,7 @@ A confusion matrix in the research shows strong diagonal dominance, indicating h
 - Merges COPD Presence + COPD Stage for final risk profile  
 - Suitable for real-time and low-resource clinical environments  
 - Deployed using a lightweight Flask web server  
+
 
 
 

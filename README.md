@@ -36,135 +36,99 @@ F --> G[Final COPD Diagnosis & Stage Output]
 
 
 
-📂 Dataset Details
-1️⃣ Structured Tabular Data (NHANES)
+## 📂 Dataset Details
 
-Contains spirometry and demographic attributes: FEV1, FVC, Age, Sex, BMI, Smoking History.
+### **1️⃣ Structured Tabular Data (NHANES)**  
+This dataset contains spirometry and demographic attributes such as:
 
-Training Samples: 5,615
+- FEV1  
+- FVC  
+- Age  
+- Sex  
+- BMI  
+- Smoking History  
 
-Testing Samples: 1,404
+**Dataset Split:**  
+- **Training Samples:** 5,615  
+- **Testing Samples:** 1,404  
 
+---
 
-6a792677-8b32-4d72-8b45-d60d8b1…
+### **2️⃣ Respiratory Audio Dataset (Kaggle Respiratory Sound Database)**  
+The audio dataset includes `.wav` recordings labeled as:
 
-2️⃣ Respiratory Audio Dataset (Kaggle Respiratory Sound Database)
+- COPD  
+- Asthma  
+- Pneumonia  
+- Bronchial Disorder  
+- Healthy  
 
-Labeled .wav files of:
+**Dataset Split:**  
+- **Training Files:** 1,937  
+- **Testing Files:** 485  
 
-COPD
+---
 
-Asthma
+## 🛠️ Preprocessing Steps
 
-Pneumonia
+### **Tabular Data (NHANES)**
+- Missing value handling  
+- Feature scaling (z-score normalization)  
+- Label encoding for categorical attributes  
+- Train/test split  
 
-Bronchial Disorder
+---
 
-Healthy
+### **Audio Data (Lung Sounds)**
+- Noise reduction (100–2000 Hz band-pass filter)  
+- Segmentation into fixed-duration frames  
+- MFCC feature extraction  
+- Data augmentation (pitch shift, time-stretch, noise injection)  
+- Normalization (0–1 scaling)  
 
-Training Files: 1,937
+---
 
-Testing Files: 485
+## 🧠 Model Architectures
 
+### **1️⃣ MLP — COPD Stage Prediction**
+The MLP model uses spirometry + demographic features to classify:
 
-6a792677-8b32-4d72-8b45-d60d8b1…
+- Mild  
+- Moderate  
+- Severe  
 
-🛠️ Preprocessing Steps
-Tabular Data (NHANES)
+A confusion matrix in the research shows strong diagonal dominance, indicating high accuracy of stage prediction.
 
-Missing value handling
+---
 
-Feature scaling (z-score normalization)
+### **2️⃣ CNN–LSTM — Lung Sound COPD Classification**
+- **CNN layers** extract spectral patterns from MFCCs  
+- **LSTM layers** capture temporal breathing sequences  
+- **Output:** COPD vs Non-COPD  
 
-Label encoding of categorical attributes
+**Performance Highlights:**  
+- **Accuracy:** 98.19%  
+- **Precision:** 98%  
+- **Recall:** 97.8%  
+- **F1-Score:** 97.9%  
+- **AUC:** 1.00  
 
-Train/test split
+---
 
+## 📈 Results
 
-6a792677-8b32-4d72-8b45-d60d8b1…
+### 🔹 CNN–LSTM Performance  
+- Achieved **98.19% accuracy** for COPD sound classification  
+- Near-perfect **AUC = 1.00**  
+- Low overfitting and strong generalization  
 
-Audio Data
+### 🔹 MLP Stage Prediction  
+- High accuracy across Mild, Moderate, Severe classes  
+- Stable training vs validation curves  
 
-Noise reduction (100–2000 Hz band-pass filtering)
+### 🔹 Combined Framework  
+- Merges COPD Presence + COPD Stage for final risk profile  
+- Suitable for real-time and low-resource clinical environments  
+- Deployed using a lightweight Flask web server  
 
-Segmentation into uniform frames
 
-MFCC extraction
-
-Augmentation (pitch shift, time-stretching, background noise)
-
-Normalization (0–1 scaling)
-
-
-6a792677-8b32-4d72-8b45-d60d8b1…
-
-🧠 Model Architectures
-1️⃣ MLP (Multilayer Perceptron) — COPD Stage Prediction
-
-Uses spirometry + demographic features to classify:
-
-Mild
-
-Moderate
-
-Severe
-
-Confusion Matrix (from paper):
-
-
-6a792677-8b32-4d72-8b45-d60d8b1…
-
-2️⃣ CNN–LSTM — Lung Sound COPD Classification
-
-CNN extracts spectral features from MFCCs
-
-LSTM learns temporal breathing cycles
-
-Output: COPD vs Non-COPD
-
-Performance Highlights:
-
-Accuracy: 98.19%
-
-Precision: 98%
-
-Recall: 97.8%
-
-F1-Score: 97.9%
-
-AUC: 1.00
-
-
-6a792677-8b32-4d72-8b45-d60d8b1…
-
-📈 Results
-🔹 CNN–LSTM Performance
-
-Extremely high classification accuracy (98.19%)
-
-Near-perfect AUC of 1.00
-
-Strong generalization with low overfitting
-
-
-6a792677-8b32-4d72-8b45-d60d8b1…
-
-🔹 MLP Stage Prediction
-
-High accuracy for Mild, Moderate, and Severe stages
-
-Stable training and validation curves
-
-
-6a792677-8b32-4d72-8b45-d60d8b1…
-
-🔹 Combined Framework
-
-Integrates predictions into a unified COPD risk profile
-
-Suitable for real-time clinical or remote monitoring
-
-Deployed via Flask lightweight server
-
-
-6a792677-8b32-4d72-8b45-d60d8b1…

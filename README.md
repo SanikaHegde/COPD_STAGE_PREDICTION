@@ -35,7 +35,10 @@ flowchart TD
     D --> F[Prediction Fusion]
     E --> F
     F --> G[Final COPD Diagnosis & Stage Output]
-```mermaid
+
+
+
+
 
 ###📂 Dataset Details
 
@@ -159,6 +162,7 @@ A confusion matrix in the research shows strong diagonal dominance, indicating h
 - **Manvanth G C** 
 - **Vaishnavi S. Tandel** 
 - **Manoj** 
+
 
 
 

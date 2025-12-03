@@ -35,3 +35,136 @@ E --> F
 F --> G[Final COPD Diagnosis & Stage Output]
 
 
+
+📂 Dataset Details
+1️⃣ Structured Tabular Data (NHANES)
+
+Contains spirometry and demographic attributes: FEV1, FVC, Age, Sex, BMI, Smoking History.
+
+Training Samples: 5,615
+
+Testing Samples: 1,404
+
+
+6a792677-8b32-4d72-8b45-d60d8b1…
+
+2️⃣ Respiratory Audio Dataset (Kaggle Respiratory Sound Database)
+
+Labeled .wav files of:
+
+COPD
+
+Asthma
+
+Pneumonia
+
+Bronchial Disorder
+
+Healthy
+
+Training Files: 1,937
+
+Testing Files: 485
+
+
+6a792677-8b32-4d72-8b45-d60d8b1…
+
+🛠️ Preprocessing Steps
+Tabular Data (NHANES)
+
+Missing value handling
+
+Feature scaling (z-score normalization)
+
+Label encoding of categorical attributes
+
+Train/test split
+
+
+6a792677-8b32-4d72-8b45-d60d8b1…
+
+Audio Data
+
+Noise reduction (100–2000 Hz band-pass filtering)
+
+Segmentation into uniform frames
+
+MFCC extraction
+
+Augmentation (pitch shift, time-stretching, background noise)
+
+Normalization (0–1 scaling)
+
+
+6a792677-8b32-4d72-8b45-d60d8b1…
+
+🧠 Model Architectures
+1️⃣ MLP (Multilayer Perceptron) — COPD Stage Prediction
+
+Uses spirometry + demographic features to classify:
+
+Mild
+
+Moderate
+
+Severe
+
+Confusion Matrix (from paper):
+
+
+6a792677-8b32-4d72-8b45-d60d8b1…
+
+2️⃣ CNN–LSTM — Lung Sound COPD Classification
+
+CNN extracts spectral features from MFCCs
+
+LSTM learns temporal breathing cycles
+
+Output: COPD vs Non-COPD
+
+Performance Highlights:
+
+Accuracy: 98.19%
+
+Precision: 98%
+
+Recall: 97.8%
+
+F1-Score: 97.9%
+
+AUC: 1.00
+
+
+6a792677-8b32-4d72-8b45-d60d8b1…
+
+📈 Results
+🔹 CNN–LSTM Performance
+
+Extremely high classification accuracy (98.19%)
+
+Near-perfect AUC of 1.00
+
+Strong generalization with low overfitting
+
+
+6a792677-8b32-4d72-8b45-d60d8b1…
+
+🔹 MLP Stage Prediction
+
+High accuracy for Mild, Moderate, and Severe stages
+
+Stable training and validation curves
+
+
+6a792677-8b32-4d72-8b45-d60d8b1…
+
+🔹 Combined Framework
+
+Integrates predictions into a unified COPD risk profile
+
+Suitable for real-time clinical or remote monitoring
+
+Deployed via Flask lightweight server
+
+
+6a792677-8b32-4d72-8b45-d60d8b1…

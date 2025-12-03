@@ -23,8 +23,9 @@ By integrating both modalities, the system achieves **98.19% accuracy** and **AU
 ---
 
 
-## 🧬 System Architecture  
+## 🧬 System Architecture & Dataset Details
 
+### 🔹 System Architecture
 ```mermaid
 flowchart TD
     A[Input Data] --> B[Spirometry Data Preprocessing]
@@ -37,7 +38,7 @@ flowchart TD
 
 
 
-## 📂 Dataset Details
+ 📂 Dataset Details
 
 ### **1️⃣ Structured Tabular Data (NHANES)**  
 This dataset contains spirometry and demographic attributes such as:
@@ -159,6 +160,7 @@ A confusion matrix in the research shows strong diagonal dominance, indicating h
 - **Manvanth G C** 
 - **Vaishnavi S. Tandel** 
 - **Manoj** 
+
 
 
 

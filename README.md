@@ -35,7 +35,7 @@ flowchart TD
     E --> F
     F --> G[Final COPD Diagnosis & Stage Output]
 
-----
+
 ## 📂 Dataset Details
 
 ### **1️⃣ Structured Tabular Data (NHANES)**  
@@ -158,6 +158,7 @@ A confusion matrix in the research shows strong diagonal dominance, indicating h
 - **Manvanth G C** 
 - **Vaishnavi S. Tandel** 
 - **Manoj** 
+
 
 
 

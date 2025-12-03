@@ -1,56 +1,37 @@
-# 🫁 COPD Stage Prediction and Severity Stage Classification
+# 🫁 Multimodal Deep Learning Framework for Early COPD Prediction & Severity Stage Classification
 
 ## 📌 Overview  
-Chronic Obstructive Pulmonary Disease (COPD) is a progressive lung disease that causes airflow blockage and breathing-related problems. Early prediction and staging play a crucial role in patient monitoring and treatment planning.
+This project implements a **dual Deep Learning–based system** designed for early diagnosis and accurate staging of **Chronic Obstructive Pulmonary Disease (COPD)**.  
+Unlike traditional approaches that rely only on spirometry or binary classification of lung sounds, this framework **combines two complementary data sources**:
 
-This project builds a **machine learning model** that predicts the **COPD stage** based on clinical and physiological features.
+- 📊 **Structured spirometry & demographic data (FEV1, FVC, Age, BMI, Smoking History)**  
+- 🎧 **Respiratory audio signals converted into MFCC features**
 
----
-
-## 🎯 Objectives  
-- Predict the **COPD stage** using ML algorithms  
-- Build a clean ML pipeline (preprocessing → training → evaluation)  
-- Compare different ML models  
-- Provide a reusable project structure for healthcare analytics  
+By integrating both modalities, the system achieves **98.19% accuracy** and **AUC = 0.99**, significantly outperforming single-modality baselines :contentReference[oaicite:0]{index=0}.
 
 ---
 
-## 🗂️ Dataset  
-The dataset contains anonymized patient details such as:
-
-- Age  
-- Gender  
-- Smoking history  
-- FEV1  
-- FVC  
-- FEV1/FVC ratio  
-- Symptoms score  
-- Medical test parameters  
-
-> Note: Dataset cannot be uploaded due to privacy. You can use any COPD-related dataset or your own collected data.
+## 🎯 Key Features  
+- Dual-model system combining:
+  - **MLP** for COPD stage prediction  
+  - **CNN–LSTM** for COPD vs Non-COPD lung sound classification  
+- MFCC-based feature extraction for respiratory sounds  
+- Automated preprocessing pipelines  
+- Flask-based lightweight web deployment  
+- Real-time, non-invasive respiratory assessment  
+- High accuracy and clinically meaningful predictions
 
 ---
 
-## 🧠 Machine Learning Models Used  
-The following ML models were tested:
-
-- Logistic Regression  
-- Random Forest Classifier  
-- Support Vector Machine (SVM)  
-- XGBoost Classifier  
-- K-Nearest Neighbors (KNN)
-
-The best-performing model is selected based on various metrics.
-
----
-
-## 🔄 Workflow  
+## 🧬 System Architecture  
 ```mermaid
 flowchart TD
-A[Data Collection] --> B[Data Cleaning]
-B --> C[Feature Engineering]
-C --> D[Train-Test Split]
-D --> E[Model Training]
-E --> F[Model Evaluation]
-F --> G[Final COPD Stage Prediction]
+A[Input Data] --> B[Spirometry Data Preprocessing]
+A --> C[Lung Sound Audio Preprocessing]
+B --> D[MLP Model - Stage Prediction]
+C --> E[CNN-LSTM Model - Sound Classification]
+D --> F[Prediction Fusion]
+E --> F
+F --> G[Final COPD Diagnosis & Stage Output]
+
 

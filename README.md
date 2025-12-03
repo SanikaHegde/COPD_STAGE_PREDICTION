@@ -35,7 +35,7 @@ E --> F
 F --> G[Final COPD Diagnosis & Stage Output]
 
 
-
+----
 ## 📂 Dataset Details
 
 ### **1️⃣ Structured Tabular Data (NHANES)**  
@@ -130,5 +130,6 @@ A confusion matrix in the research shows strong diagonal dominance, indicating h
 - Merges COPD Presence + COPD Stage for final risk profile  
 - Suitable for real-time and low-resource clinical environments  
 - Deployed using a lightweight Flask web server  
+
 
 

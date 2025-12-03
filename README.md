@@ -27,7 +27,7 @@ By integrating both modalities, the system achieves **98.19% accuracy** and **AU
 ## 🧬 System Architecture
 ![System Architecture](diagram..png)
 
-
+---
 ## 📂 Dataset Details
 
 ### **1️⃣ Structured Tabular Data (NHANES)**  
@@ -151,6 +151,7 @@ A confusion matrix in the research shows strong diagonal dominance, indicating h
 - **Manvanth G C**  
 - **Vaishnavi S. Tandel**  
 - **Manoj**
+
 
 
 

@@ -37,8 +37,7 @@ flowchart TD
     F --> G[Final COPD Diagnosis & Stage Output]
 
 
-
- 📂 Dataset Details
+### **📂 Dataset Details**
 
 ### **1️⃣ Structured Tabular Data (NHANES)**  
 This dataset contains spirometry and demographic attributes such as:
@@ -160,6 +159,7 @@ A confusion matrix in the research shows strong diagonal dominance, indicating h
 - **Manvanth G C** 
 - **Vaishnavi S. Tandel** 
 - **Manoj** 
+
 
 
 

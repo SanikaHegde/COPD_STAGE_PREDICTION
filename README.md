@@ -120,5 +120,32 @@ A confusion matrix in the research shows strong diagonal dominance, indicating h
 - Deployed using a lightweight Flask web server  
 
 
+## 🌟 Advantages of This Framework
+
+- Multimodal fusion significantly improves diagnostic accuracy  
+- Works effectively in low-resource clinical environments  
+- Supports rapid screening and early COPD risk stratification  
+- Reduces dependency on manual auscultation  
+- Scalable architecture deployable on edge devices and lightweight servers  
+
+---
+
+## 🔮 Future Enhancements
+
+- Integration of explainable AI methods (Grad-CAM, SHAP) for clinical transparency  
+- Validation using diverse and real-world multi-center datasets  
+- Support for wearable sensor data for continuous monitoring  
+- Mobile-friendly and cross-platform deployment  
+- Enhanced noise-robust models for real-world respiratory audio  
+
+---
+
+## 👩‍💻 Authors
+
+- **Sanika H R**  
+- **Manvanth G C** 
+- **Vaishnavi S. Tandel** 
+- **Manoj** 
+
 
 

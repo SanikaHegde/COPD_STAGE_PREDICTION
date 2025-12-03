@@ -23,19 +23,10 @@ By integrating both modalities, the system achieves **98.19% accuracy** and **AU
 ---
 
 
-## 🧬 System Architecture & Dataset Details
 
-### 🔹 System Architecture
+## 🧬 System Architecture
+![System Architecture](diagram.png)
 
-```mermaid
-flowchart TD
-    A[Input Data] --> B[Spirometry Data Preprocessing]
-    A --> C[Respiratory Audio Preprocessing]
-    B --> D[MLP - Stage Prediction]
-    C --> E[CNN-LSTM - Sound Classification]
-    D --> F[Prediction Fusion]
-    E --> F
-    F --> G[Final COPD Diagnosis & Stage Output]
 
 ## 📂 Dataset Details
 
@@ -160,6 +151,7 @@ A confusion matrix in the research shows strong diagonal dominance, indicating h
 - **Manvanth G C**  
 - **Vaishnavi S. Tandel**  
 - **Manoj**
+
 
 
 

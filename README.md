@@ -23,7 +23,6 @@ By integrating both modalities, the system achieves **98.19% accuracy** and **AU
 ---
 
 
-
 ## 🧬 System Architecture
 ![System Architecture](diagram..png)
 
